@@ -11,8 +11,18 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <script type="text/javascript" src="js/webui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+        integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script type="text/javascript" src="https://pexipdemo.com/static/webrtc/js/pexrtc.js"></script>
+    <script type="text/javascript" src="js/webui.js"></script>
 </head>
 
 <body>
@@ -34,6 +44,10 @@
                         <option value="576">Medium Bandwidth (576kbps)</option>
                         <option value="192">Low Bandwidth (192kbps)</option>
                     </select><br />
+                    <div class="label">Video Device</div>
+                    <select id="video_device"></select><br />
+                    <div class="label">Audio Device</div>
+                    <select id="audio_device"></select><br />
                     <button onclick="doCall()">Join Now</button>
                 </div>
             </div>
@@ -42,6 +56,10 @@
         <div class="conference_video_container" id="conference_video_container">
             <div class="conference_video">
                 <video id="video" autoplay="autoplay">
+            </div>
+
+            <div class="conference_selfview">
+                <video id="selfview" autoplay="autoplay" muted="true">
             </div>
 
             <div class="chat_box" id="chat_box">
@@ -56,9 +74,11 @@
             </div>
 
             <div class="controls">
-                <div class="control" onclick="muteToggle()" id="mute_button"><i class="fas fa-microphone-slash"></i></div>
+                <div class="control" onclick="muteToggle()" id="mute_button"><i class="fas fa-microphone-slash"></i>
+                </div>
                 <div class="control" onclick="endCall()"><i class="fas fa-phone-slash"></i></div>
                 <div class="control" onclick="showChat()"><i class="fas fa-comment-dots"></i></div>
+                <div class="control" onclick="switchCamera()"><i class="fas fa-exchange-alt"></i></div>
             </div>
         </div>
     </div>

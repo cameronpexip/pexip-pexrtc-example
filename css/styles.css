@@ -89,6 +89,19 @@ body {
     z-index: -99;
 }
 
+.conference_selfview {
+    width: 200px;
+    height: 100px;
+
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.conference_selfview video {
+    width: 200px;
+}
+
 .chat_box {
     display: none;
     flex-direction: column;
