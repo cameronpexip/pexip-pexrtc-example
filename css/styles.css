@@ -8,8 +8,8 @@ body {
 }
 
 .conference_settings_background {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     
     left: 0;
     right: 0;
@@ -79,14 +79,13 @@ body {
 }
 
 .conference_video {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: flex;
 }
 
 .conference_video video {
-    width: 100%;
+    height: 100vh;
     z-index: -99;
 }
 
@@ -169,4 +168,7 @@ body {
 
 .conference_video_container {
     display: none;
+    
+    align-content: center;
+    justify-content: center;
 }
