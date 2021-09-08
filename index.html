@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cameron's Pexip Homework</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <script type="text/javascript" src="js/webui.js"></script>
+    <script type="text/javascript" src="https://pexipdemo.com/static/webrtc/js/pexrtc.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="conference_settings_background" id="conference_settings_background">
+            <div class="conference_settings">
+                <div class="conference_settings_container">
+                    <h2>Conference Info</h2>
+                    <div class="label">Conference Alias</div>
+                    <input type="text" id="conference_alias" value="meet.mcguffie" /><br />
+                    <div class="label">Your name</div>
+                    <input type="text" id="your_name" value="Tester" /><br />
+                    <div class="label">Your Pin</div>
+                    <input type="text" id="pin" value="" /><br />
+                    <div class="label">Bandwidth</div>
+                    <select id="bandwidth">
+                        <option value="1920">Maximum Bandwidth (1920kbps)</option>
+                        <option value="1280">High Bandwidth (1280kbps)</option>
+                        <option value="576">Medium Bandwidth (576kbps)</option>
+                        <option value="192">Low Bandwidth (192kbps)</option>
+                    </select><br />
+                    <button onclick="doCall()">Join Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="conference_video_container" id="conference_video_container">
+            <div class="conference_video">
+                <video id="video" autoplay="autoplay">
+            </div>
+
+            <div class="chat_box" id="chat_box">
+                <div class="chat_content">
+                    <div class="chat_content_text" id="chat_content_text">
+                    </div>
+                </div>
+                <div class="chat_message">
+                    <div class="chat_close" onclick="closeChat()"><i class="fas fa-times"></i></div>
+                    <input type="text" value="" id="chat_message" /> <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control" onclick="muteToggle()" id="mute_button"><i class="fas fa-microphone-slash"></i></div>
+                <div class="control" onclick="endCall()"><i class="fas fa-phone-slash"></i></div>
+                <div class="control" onclick="showChat()"><i class="fas fa-comment-dots"></i></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
