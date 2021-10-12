@@ -27,6 +27,7 @@ function doCall() {
     pexRTC.onError = endCall;
     pexRTC.onDisconnect = endCall;
     pexRTC.onChatMessage = getMessage;
+    pexRTC.onCallTransfer = callTransfer;
 
     // Set the video & audio source to the one selected in the dropdown
     pexRTC.video_source = $('#video_device option:selected').val();
@@ -34,6 +35,13 @@ function doCall() {
 
     pexRTC.makeCall("pexipdemo.com", alias, name, bandwidth);
 }
+
+/* Call Transfer Example */
+function callTransfer(event) {
+    console.warn(`Call Transfered!`);
+    console.warn(event);
+}
+/* End Call Transfer Example */
 
 function callConnected(videoURL) {
     if (typeof (MediaStream) !== "undefined" && videoURL instanceof MediaStream) {
